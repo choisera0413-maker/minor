@@ -986,11 +986,17 @@
       card.classList.toggle('active', !isOpen); 
       updateProgress(id, !isOpen); 
     } 
-
-    function toggleWd(id) {
-      var card = document.getElementById(id);
-      card.classList.toggle('wd-open');
-    }
+function toggleWd(id) {
+  var card = document.getElementById(id);
+  card.classList.toggle('wd-open');
+  var btn = card.querySelector('.wd-toggle-btn');
+  if (card.classList.contains('wd-open')) {
+    btn.textContent = '👈 닫기';
+  } else {
+    btn.textContent = '👈 클릭';
+  }
+}
+    
 
     function toggleBi(id) {
       var box = document.getElementById(id);
